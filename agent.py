@@ -22,7 +22,6 @@ class DPAgentGrid(object):
         pass
 
     def play(self):
-        input('Press enter to play')
         self.grid.render()
         while not self._is_terminal(self.state):
             a = next(iter(self.policy[self.state]))
@@ -187,8 +186,6 @@ class DPAgentGrid(object):
                 if new_a != old_a:
                     converged = False
 
-            if stop:
-                input('Enter to continue')
             if converged:
                 break
 
